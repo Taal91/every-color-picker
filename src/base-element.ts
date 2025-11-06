@@ -67,7 +67,7 @@ export abstract class BaseElementController {
 
   constructor(e: HTMLElement) {
     this.e = e;
-    this.root = this.e.attachShadow({ mode: 'open' });
+    this.root = this.e.shadowRoot || this.e.attachShadow({ mode: 'open' });
   }
 
   protected $<T extends HTMLElement>(id: string): T {
